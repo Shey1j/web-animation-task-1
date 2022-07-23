@@ -1,5 +1,5 @@
 <template>
-  <section id="door-section" class="hero-door__section" data-scroll-section>
+  <section id="door-section" class="hero-door__section">
     <div class="arc-text">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1490.342 1273.705">
         <path
@@ -18,7 +18,9 @@
     </div>
     <div class="arc-content">
       <div class="callout-text">
-        <h2>Global clients and handpicked projects that place innovation at the forefront</h2>
+        <h2 data-splitting="lines" data-animation="text">
+          Global clients and handpicked projects that place innovation at the forefront
+        </h2>
       </div>
       <div>
         <div class="stats-flex__section">
@@ -28,7 +30,7 @@
               +
             </div>
             <div class="block-text">
-              <span>Projects</span>
+              <span data-splitting="lines" data-animation="text">Projects</span>
             </div>
           </div>
           <div class="stat-block middle">
@@ -37,7 +39,7 @@
               %
             </div>
             <div class="block-text">
-              <span>Return Rate</span>
+              <span data-splitting="lines" data-animation="text">Return Rate</span>
             </div>
           </div>
           <div class="stat-block">
@@ -46,7 +48,7 @@
               million
             </div>
             <div class="block-text">
-              <span>Lives changed</span>
+              <span data-splitting="lines" data-animation="text">Lives changed</span>
             </div>
           </div>
         </div>
