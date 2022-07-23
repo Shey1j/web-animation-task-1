@@ -133,7 +133,6 @@ export default {
     },
     next () {
       if (this.activeId < 3) {
-        console.log('get here')
         this.activeId++
         this.changeTransformPosition(this.activeId)
       }
@@ -148,10 +147,7 @@ export default {
       const section = document.getElementById('our-works')
       const allInnerSections = section.getElementsByClassName('work__inner')
       const allInnerSectionsArray = [...allInnerSections]
-      const linkSection = section.getElementsByClassName('work__cta')[0]
       const innerWidth = allInnerSectionsArray[0].offsetWidth
-      const linkWidth = linkSection.offsetWidth
-      console.log(linkWidth)
       if (index === 0) {
         section.style.transform = 'translate(0px, 0px)'
       } else if (index === 1) {
