@@ -4,8 +4,7 @@ export default {
   head: {
     title: 'anim-seyi-project',
     htmlAttrs: {
-      lang: 'en',
-      'data-scroll-direction': 'vertical'
+      lang: 'en'
     },
     meta: [
       { charset: 'utf-8' },
@@ -28,10 +27,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    {
-      src: "~/plugins/locomotiveScroll.js",
-      mode: "client"
-    },
+    { src: "~/plugins/index.js", mode: "client" },
+    { src: "~/plugins/both.js", mode: "client" },
     {
       src: "~/plugins/vimeo-player.js",
       mode: "client"
