@@ -66,6 +66,25 @@ export default {
 }
 </script>
 
-<style >
+<style scoped>
+.has-scroll-smooth body {
+  overflow: hidden;
+}
 
+.has-scroll-smooth .js-locomotive {
+  min-height: 100vh;
+  width: 100%;
+}
+
+.has-scroll-smooth .js-locomotive.horizontal {
+  width: 100%;
+  display: block;
+}
+
+@media (min-width: 769px) {
+  .has-scroll-smooth .js-locomotive.horizontal {
+    /* width: fit-content; */
+    display: table;
+  }
+}
 </style>
