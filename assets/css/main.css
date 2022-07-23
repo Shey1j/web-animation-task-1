@@ -10,6 +10,11 @@
     src: url(../fonts/PPTelegraf-Regular.otf);
 }
 
+@font-face {
+    font-family: 'Telegraf Light';
+    src: url(../fonts/PPTelegraf-UltraLight.otf);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -18,6 +23,7 @@
 
 body {
     font-family: 'Averta';
+    font-weight: 400;
 }
 
 button {
@@ -38,6 +44,22 @@ h5 {
     font-family: 'Telegraf';
 }
 
+section {
+    display: block;
+}
+
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    /* font: inherit; */
+    vertical-align: baseline;
+}
+
+button {
+    cursor: pointer;
+}
 
 .slider-wrapper .slider-item iframe,
 .block-video iframe {
@@ -79,3 +101,33 @@ video,
     visibility: inherit;
     pointer-events: auto;
 }
+
+.highlight {
+    color: #dc7550;
+}
+
+.word {
+    position: relative;
+    /* opacity: 0; */
+}
+
+.splitting[data-animation="text"] {
+    overflow: hidden;
+    height: fit-content;
+}
+
+.splitting[data-animation="text"] .word {
+    transform: translateY(400px);
+    transition: transform 2s cubic-bezier(0.9,0,.2,1);
+    transition-delay: calc( 0.2s + ( 0.2s * ( var(--word-index)) ) );
+}
+
+.splitting.is-inview[data-animation="text"] .word {
+    transform: translateY(0%);
+}
+
+[data-animation=line] {
+    width: 100%;
+    display: block;
+}
+

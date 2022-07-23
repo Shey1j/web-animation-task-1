@@ -1,14 +1,14 @@
 <template>
-  <section data-scroll-section class="hero-section__wrapper">
+  <section id="hero-section" class="hero-section__wrapper">
     <div class="section-container">
-      <h1 class="header-text">
+      <h1 id="header-text" class="header-text" data-splitting="lines" data-animation="text">
         Designing digital experiences that <span class="highlight">enrich human lives</span> and help <span class="highlight">businesses grow.</span>
       </h1>
       <div class="section-flex__container">
         <div class="hero-text-section">
           <div class="text-dash" />
           <div>
-            <p class="hero-text">
+            <p id="hero-text" class="hero-text" data-splitting="lines" data-animation="text">
               Pineapple is a global UX/UI agency helping ambitious companies and visionary entrepreneurs bring the next design revolution.
             </p>
             <a href="/" class="hero-cta">
@@ -80,7 +80,13 @@
 
 <script>
 export default {
+  data () {
+    return {
+    }
+  },
   mounted () {
+  },
+  methods: {
   }
 }
 </script>
@@ -129,10 +135,6 @@ export default {
     color: hsla(0,0%,100%,.6);
     font-size: 1.2rem;
     line-height: 1.5625;
-}
-
-.highlight {
-    color: #dc7550;
 }
 
 .hero-cta {
