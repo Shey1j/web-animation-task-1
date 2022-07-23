@@ -38,7 +38,7 @@ export default {
     left: 0;
     bottom: auto;
     z-index: 4;
-    padding: 2.5rem 4rem 0;
+    padding: 1.5rem 4rem 0;
     box-shadow: none;
     background-color: #000;
     transition: box-shadow .3s ease,transform .5s ease .5s,background-color .3s ease;
@@ -54,7 +54,7 @@ export default {
 }
 
 .nav-header__wrapper .nav-header__content {
-    padding-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -82,6 +82,8 @@ export default {
 
 .nav-header__wrapper .app-logo .logo-text {
     color: #fff;
+    font-family: 'Telegraf';
+    font-size: 1.2rem;
 }
 
 .nav-header__wrapper.white .app-logo .logo-text {
@@ -89,9 +91,9 @@ export default {
 }
 
 .nav-header__wrapper .app-logo .app-icon__container {
-    width: 3rem;
-    height: 3rem;
-    margin-right: 1rem;
+    width: 2.3rem;
+    height: 2.3rem;
+    margin-right: 0.7rem;
     background-repeat: no-repeat;
     background-position: 50%;
     background-size: contain;
