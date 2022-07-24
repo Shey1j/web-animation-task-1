@@ -37,10 +37,11 @@
         :key="index"
         :index="index"
         :active-id="activeId"
+        :all-ids="allActiveIds"
         :title="item.title"
         :image="require(`~/assets/images/${item.image}`)"
         :activities="item.content"
-        @set-active="setActiveItem"
+        @set-active="handleSetActiveItem"
       />
       <button v-if="!expandAll" class="expand-all" @click="expandAllItems">
         Expand All
@@ -78,26 +79,27 @@ export default {
           content: ['Front-end development', 'Innovation garages', 'Building design systems', 'Improving existing KPIs', 'Building style guides', 'Continuous product improvement']
         }
       ],
-      activeId: [0],
-      expandAll: false
+      allActiveIds: [],
+      expandAll: false,
+      activeId: 0
     }
   },
   methods: {
-    setActiveItem (id) {
-      if (this.activeId[0] !== id) {
-        this.activeId[0] = id
+    handleSetActiveItem (value) {
+      if (value !== this.activeId) {
+        this.activeId = value
       }
     },
     expandAllItems () {
       this.expandAll = !this.expandAll
-      if (this.activeId.length < this.contents.length) {
+      if (this.allActiveIds.length < this.contents.length) {
         this.contents.map((item, index) => {
-          this.activeId.splice(index, 1)
-          this.activeId.push(index)
+          this.allActiveIds.push(index)
           return item
         })
       } else {
-        this.activeId = [-1]
+        this.activeId = -1
+        this.allActiveIds = []
       }
     }
   }

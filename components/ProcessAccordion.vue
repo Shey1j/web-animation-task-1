@@ -1,5 +1,5 @@
 <template>
-  <div class="process-accordion" :class="{active: activeId.includes(index)}" @click="handleSetActive(index)">
+  <div class="process-accordion" :class="{active: activeId === index || allIds.includes(index)}" @click="handleSetActive(index)">
     <div class="process-accordion__wrapper">
       <div class="process-title">
         <h3 class="process-title__title" data-splitting="lines" data-animation="text">
@@ -38,10 +38,6 @@ export default {
       type: Number,
       required: true
     },
-    activeId: {
-      type: Array,
-      required: true
-    },
     title: {
       type: String,
       default: ''
@@ -51,6 +47,14 @@ export default {
       default: ''
     },
     activities: {
+      type: Array,
+      default: () => []
+    },
+    activeId: {
+      type: Number,
+      default: 0
+    },
+    allIds: {
       type: Array,
       default: () => []
     }
@@ -156,16 +160,16 @@ export default {
     position: absolute;
     top: 0.6rem;
     left: -2rem;
-    transition: opacity .5s ease .3s;
+    /* transition: opacity .5s ease .3s; */
 }
 
-.process-accordion .process-accordion__wrapper .process-activities li:before {
+/* .process-accordion .process-accordion__wrapper .process-activities li:before {
   opacity: 0;
 }
 
 .process-accordion .process-accordion__wrapper .process-activities li.is-inview:before {
   opacity: 1;
-}
+} */
 
 .process-accordion.active .process-accordion__wrapper .process-icon {
   display: none;
