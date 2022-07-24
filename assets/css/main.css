@@ -131,3 +131,10 @@ video,
     display: block;
 }
 
+[data-animation=mask].in-view {
+    visibility: visible;
+    -webkit-clip-path: polygon(0 0,100% 0,100% 100%,0 100%);
+    clip-path: polygon(0 0,100% 0,100% 100%,0 100%);
+    transform: skewY(0);
+}
+

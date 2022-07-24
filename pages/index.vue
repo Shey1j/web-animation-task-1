@@ -17,6 +17,7 @@
       <page-top-section />
       <process-section />
       <our-works-section />
+      <blog-section />
     </LocomotiveScroll>
   </div>
 </template>
@@ -50,6 +51,7 @@ export default {
         this.addDoorSectionTextAnimation()
         this.addProcessSectionTextAnimation()
         this.addOurWorksTextAnimation()
+        this.addBlogTextAnimation()
       })
     },
     handleMenuDisplay () {
@@ -130,6 +132,22 @@ export default {
     addOurWorksTextAnimation () {
       const mainElement = document.getElementById('our-works-section')
       const element = document.getElementById('our-works-section').getElementsByClassName('splitting')
+      const elemRect = mainElement.getBoundingClientRect()
+      const height = window.innerHeight - elemRect.top
+      if (height > 0) {
+        const allElements = [...element]
+        allElements[0].classList.add('is-inview')
+        allElements.forEach((el) => {
+          const currentElement = el.getBoundingClientRect()
+          if (currentElement.top > 1 && (window.innerHeight - currentElement.top > 0)) {
+            el.classList.add('is-inview')
+          }
+        })
+      }
+    },
+    addBlogTextAnimation () {
+      const mainElement = document.getElementById('blog-section')
+      const element = document.getElementById('blog-section').getElementsByClassName('splitting')
       const elemRect = mainElement.getBoundingClientRect()
       const height = window.innerHeight - elemRect.top
       if (height > 0) {
