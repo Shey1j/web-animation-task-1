@@ -146,14 +146,10 @@ export default {
 
 .process-accordion .process-line {
   height: 1px;
+  width: 0%;
   background: #dddfe2;
   transform-origin: left top;
-  transition: transform 2s ease-in, opacity 1s ease-in;
-}
-
-.process-accordion .process-line.inview {
-  transform: translate(0, 0);
-  opacity: 1;
+  transition: width 2s ease-in;
 }
 
 .process-accordion.active .process-line {
