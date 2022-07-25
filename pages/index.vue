@@ -19,6 +19,7 @@
       <our-works-section />
       <blog-section />
       <faq-section />
+      <footer-section />
     </LocomotiveScroll>
   </div>
 </template>
@@ -55,6 +56,7 @@ export default {
         this.addBlogTextAnimation()
         this.addFaqTextAnimation()
         this.addFaqScrollTextAnimation()
+        this.addFooterTextAnimation()
       })
     },
     handleMenuDisplay () {
@@ -84,7 +86,7 @@ export default {
       this.lastScrollTop = this.windowTop
     },
     handleDoorDataUpdate () {
-      const element = document.getElementById('door-section')
+      const element = document.getElementById('door-section').getElementsByClassName('stats-flex__section')[0]
       const elemRect = element.getBoundingClientRect()
       const height = window.innerHeight - elemRect.top
       if (height > 0) {
@@ -93,10 +95,12 @@ export default {
     },
     addHeroTextAnimation () {
       const element = document.getElementById('hero-section').getElementsByClassName('splitting')
+      const buttonElement = document.getElementById('hero-section').getElementsByClassName('hero-cta')[0]
       const allElements = [...element]
       allElements.forEach((el) => {
         el.classList.add('is-inview')
       })
+      buttonElement.classList.add('fade-in')
     },
     addDoorSectionTextAnimation () {
       const mainElement = document.getElementById('door-section')
@@ -116,15 +120,25 @@ export default {
     addProcessSectionTextAnimation () {
       const mainElement = document.getElementById('process-section')
       const element = mainElement.getElementsByClassName('splitting')
+      const buttonElement = mainElement.getElementsByClassName('process-btn')[0]
+      const lineElements = mainElement.getElementsByClassName('process-line')
       const elemRect = mainElement.getBoundingClientRect()
       const height = window.innerHeight - elemRect.top
       if (height > 0) {
         const allElements = [...element]
+        const allLineElements = [...lineElements]
         allElements[0].classList.add('is-inview')
+        buttonElement.classList.add('fade-in')
         allElements.forEach((el) => {
           const currentElement = el.getBoundingClientRect()
           if (currentElement.top > 1 && (window.innerHeight - currentElement.top > 0)) {
             el.classList.add('is-inview')
+          }
+        })
+        allLineElements.forEach((el) => {
+          const currentElement = el.getBoundingClientRect()
+          if (currentElement.top > 1 && (window.innerHeight - currentElement.top > 0)) {
+            el.style.width = '100%'
           }
         })
       }
@@ -132,15 +146,23 @@ export default {
     addOurWorksTextAnimation () {
       const mainElement = document.getElementById('our-works-section')
       const element = document.getElementById('our-works-section').getElementsByClassName('splitting')
+      const imageElement = mainElement.getElementsByClassName('work-image__large')
       const elemRect = mainElement.getBoundingClientRect()
       const height = window.innerHeight - elemRect.top
       if (height > 0) {
         const allElements = [...element]
+        const allImageElements = [...imageElement]
         allElements[0].classList.add('is-inview')
         allElements.forEach((el) => {
           const currentElement = el.getBoundingClientRect()
           if (currentElement.top > 1 && (window.innerHeight - currentElement.top > 0)) {
             el.classList.add('is-inview')
+          }
+        })
+        allImageElements.forEach((el) => {
+          const currentElement = el.getBoundingClientRect()
+          if (currentElement.top > 1 && (window.innerHeight - currentElement.top > 0)) {
+            el.classList.add('fade-in')
           }
         })
       }
@@ -148,7 +170,9 @@ export default {
     addBlogTextAnimation () {
       const mainElement = document.getElementById('blog-section')
       const element = document.getElementById('blog-section').getElementsByClassName('splitting')
+      const buttonElement = document.getElementById('blog-section').getElementsByClassName('more-blog__btn')[0]
       const elemRect = mainElement.getBoundingClientRect()
+      const buttonElemRect = buttonElement.getBoundingClientRect()
       const height = window.innerHeight - elemRect.top
       if (height > 0) {
         const allElements = [...element]
@@ -159,20 +183,31 @@ export default {
             el.classList.add('is-inview')
           }
         })
+        if (buttonElemRect.top > 1 && (window.innerHeight - buttonElemRect.top > 0)) {
+          buttonElement.classList.add('fade-in')
+        }
       }
     },
     addFaqTextAnimation () {
       const mainElement = document.getElementById('faq-section')
       const element = document.getElementById('faq-section').getElementsByClassName('splitting')
+      const lineElements = document.getElementById('faq-section').getElementsByClassName('faq-line')
       const elemRect = mainElement.getBoundingClientRect()
       const height = window.innerHeight - elemRect.top
       if (height > 0) {
         const allElements = [...element]
+        const allLineElements = [...lineElements]
         allElements[0].classList.add('is-inview')
         allElements.forEach((el) => {
           const currentElement = el.getBoundingClientRect()
           if (currentElement.top > 1 && (window.innerHeight - currentElement.top > 0)) {
             el.classList.add('is-inview')
+          }
+        })
+        allLineElements.forEach((el) => {
+          const currentElement = el.getBoundingClientRect()
+          if (currentElement.top > 1 && (window.innerHeight - currentElement.top > 0)) {
+            el.style.width = '100%'
           }
         })
       }
@@ -182,6 +217,30 @@ export default {
       const element = mainElement.getElementsByTagName('textPath')[0]
       const elemRect = mainElement.getBoundingClientRect()
       element.setAttribute('startOffset', elemRect.top)
+    },
+    addFooterTextAnimation () {
+      const mainElement = document.getElementsByClassName('footer-container')[0]
+      const element = mainElement.getElementsByClassName('splitting')
+      const buttonElement = mainElement.getElementsByClassName('footer-btn')
+      const elemRect = mainElement.getBoundingClientRect()
+      const height = window.innerHeight - elemRect.top
+      if (height > 0) {
+        const allElements = [...element]
+        const allButtonElements = [...buttonElement]
+        allElements[0].classList.add('is-inview')
+        allElements.forEach((el) => {
+          const currentElement = el.getBoundingClientRect()
+          if (currentElement.top > 1 && (window.innerHeight - currentElement.top > 0)) {
+            el.classList.add('is-inview')
+          }
+        })
+        allButtonElements.forEach((el) => {
+          const currentElement = el.getBoundingClientRect()
+          if (currentElement.top > 1 && (window.innerHeight - currentElement.top > 0)) {
+            el.classList.add('fade-in')
+          }
+        })
+      }
     }
   }
 }
