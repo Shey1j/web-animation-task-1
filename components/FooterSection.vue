@@ -92,7 +92,7 @@
             Our privacy policy
           </a>
           <div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16.4" height="12.086"><g><g><path fill="currentColor" d="M16.4 5.939v1.366l-5.194 4.781h-2.08l5.151-4.741H0V5.937Z"></path> <path fill="currentColor" d="M9.077 1.036H11.1l4.267 3.922-2.09-.001Z"></path></g></g></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16.4" height="12.086"><g><g><path fill="currentColor" d="M16.4 5.939v1.366l-5.194 4.781h-2.08l5.151-4.741H0V5.937Z" /> <path fill="currentColor" d="M9.077 1.036H11.1l4.267 3.922-2.09-.001Z" /></g></g></svg>
           </div>
         </div>
       </div>
