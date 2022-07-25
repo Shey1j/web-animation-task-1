@@ -1,7 +1,7 @@
 <template>
   <div class="faq-accordion" :class="{active: index === activeId}" @click="handleSetActive(index)">
     <div class="faq-accordion__header">
-      <h3 class="faq-accordion-header__title">
+      <h3 class="faq-accordion-header__title" data-splitting="lines" data-animation="text">
         {{ question }}
       </h3>
       <div class="faq-accordion__indicator">
@@ -99,14 +99,10 @@ export default {
 .faq-accordion .faq-line {
   background: rgba(0,0,0,.2);
   height: 1px;
+  width: 0%;
   margin-top: 2.9rem;
   transform-origin: left top;
-  transition: transform 2s ease-in, opacity 1s ease-in;
-}
-
-.faq-accordion.active .faq-line.inview {
-  transform: scaleX(1);
-  opacity: 1;
+  transition: width 2s ease-in;
 }
 
 .faq-accordion.active .faq-line {
