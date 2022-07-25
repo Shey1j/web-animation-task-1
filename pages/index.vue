@@ -18,6 +18,7 @@
       <process-section />
       <our-works-section />
       <blog-section />
+      <faq-section />
     </LocomotiveScroll>
   </div>
 </template>
@@ -52,6 +53,8 @@ export default {
         this.addProcessSectionTextAnimation()
         this.addOurWorksTextAnimation()
         this.addBlogTextAnimation()
+        this.addFaqTextAnimation()
+        this.addFaqScrollTextAnimation()
       })
     },
     handleMenuDisplay () {
@@ -65,9 +68,6 @@ export default {
           el.classList.add('white')
         } else if (this.windowTop > 250) {
           el.classList.add('is-scrolled')
-          setTimeout(() => {
-            el.classList.remove('white')
-          }, 1000)
         } else {
           el.classList.remove('is-scrolled')
           el.classList.remove('white')
@@ -160,6 +160,28 @@ export default {
           }
         })
       }
+    },
+    addFaqTextAnimation () {
+      const mainElement = document.getElementById('faq-section')
+      const element = document.getElementById('faq-section').getElementsByClassName('splitting')
+      const elemRect = mainElement.getBoundingClientRect()
+      const height = window.innerHeight - elemRect.top
+      if (height > 0) {
+        const allElements = [...element]
+        allElements[0].classList.add('is-inview')
+        allElements.forEach((el) => {
+          const currentElement = el.getBoundingClientRect()
+          if (currentElement.top > 1 && (window.innerHeight - currentElement.top > 0)) {
+            el.classList.add('is-inview')
+          }
+        })
+      }
+    },
+    addFaqScrollTextAnimation () {
+      const mainElement = document.getElementById('faq-section')
+      const element = mainElement.getElementsByTagName('textPath')[0]
+      const elemRect = mainElement.getBoundingClientRect()
+      element.setAttribute('startOffset', elemRect.top)
     }
   }
 }
