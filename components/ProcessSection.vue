@@ -39,7 +39,7 @@
         :active-id="activeId"
         :all-ids="allActiveIds"
         :title="item.title"
-        :image="require(`~/assets/images/${item.image}`)"
+        :image="item.image"
         :activities="item.content"
         @set-active="handleSetActiveItem"
       />
@@ -60,22 +60,22 @@ export default {
       contents: [
         {
           title: 'Discovering the unforeseen',
-          image: 'unforeseen.webp',
+          image: 'https://res.cloudinary.com/pineappledesign/image/upload/q_auto,f_auto/v1649731769/pineapple-website/Discovering_the_unforeseen_sshovu.png',
           content: ['UX Audit', 'Analytical data review', 'Market and User Research', 'Structuring true insights', 'User interviews and surveys', 'Information architecture (IA)']
         },
         {
           title: 'Transforming the experience',
-          image: 'experience.jpeg',
+          image: 'https://res.cloudinary.com/pineappledesign/image/upload/q_auto,f_auto/v1649731784/pineapple-website/Transforming_the_experience_nz7mbb.png',
           content: ['User experience design (UX)', 'Usability testing', 'Product innovation and strategy', 'UX Writing', 'Wireframing and Rapid Prototyping']
         },
         {
           title: 'Designing for impact',
-          image: 'airplane.jpeg',
+          image: 'https://res.cloudinary.com/pineappledesign/image/upload/q_auto,f_auto/v1649731763/pineapple-website/Designing_for_impact_sjg1dx.png',
           content: ['User Interface Design (UI)', 'Augmented Reality (AR) explorations', 'Design strategy', '3D Design', 'Custom Illustrations & iconography', '2D Motion Design']
         },
         {
           title: 'Scaling to be relevant',
-          image: 'style-guide.webp',
+          image: 'https://res.cloudinary.com/pineappledesign/image/upload/q_auto,f_auto/v1649731777/pineapple-website/Scaling_to_be_relevant_ih8jnq.png',
           content: ['Front-end development', 'Innovation garages', 'Building design systems', 'Improving existing KPIs', 'Building style guides', 'Continuous product improvement']
         }
       ],
@@ -98,6 +98,7 @@ export default {
           return item
         })
       } else {
+        // const elemnt = document.getElementsByClassName('process-accordion__wrapper')[0]
         this.activeId = -1
         this.allActiveIds = []
       }

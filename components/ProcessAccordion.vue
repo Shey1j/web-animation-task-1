@@ -140,37 +140,6 @@ export default {
     display: flex;
 }
 
-.process-accordion .process-accordion__wrapper .process-activities li {
-    width: 49%;
-    list-style: none;
-    color: rgba(18,18,18,.8);
-    margin-bottom: 2.2rem;
-    position: relative;
-    line-height: 1.3;
-}
-
-.process-accordion .process-accordion__wrapper .process-activities li:before {
-    content: "";
-    width: 0.7rem;
-    height: 1rem;
-    background-color: #ffeba2;
-    margin-right: 1.4rem;
-    border-radius: 68rem 68rem 0 0;
-    transform: rotate(90deg);
-    position: absolute;
-    top: 0.6rem;
-    left: -2rem;
-    /* transition: opacity .5s ease .3s; */
-}
-
-/* .process-accordion .process-accordion__wrapper .process-activities li:before {
-  opacity: 0;
-}
-
-.process-accordion .process-accordion__wrapper .process-activities li.is-inview:before {
-  opacity: 1;
-} */
-
 .process-accordion.active .process-accordion__wrapper .process-icon {
   display: none;
 }
@@ -178,6 +147,13 @@ export default {
 .process-accordion .process-line {
   height: 1px;
   background: #dddfe2;
+  transform-origin: left top;
+  transition: transform 2s ease-in, opacity 1s ease-in;
+}
+
+.process-accordion .process-line.inview {
+  transform: translate(0, 0);
+  opacity: 1;
 }
 
 .process-accordion.active .process-line {
