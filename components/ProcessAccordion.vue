@@ -11,6 +11,7 @@
       </div>
       <ul class="process-activities">
         <li v-for="(activity, id) in activities" :key="id" data-splitting="lines" data-animation="text">
+          <span class="marker" />
           {{ activity }}
         </li>
       </ul>

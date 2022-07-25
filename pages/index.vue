@@ -122,11 +122,13 @@ export default {
       const element = mainElement.getElementsByClassName('splitting')
       const buttonElement = mainElement.getElementsByClassName('process-btn')[0]
       const lineElements = mainElement.getElementsByClassName('process-line')
+      const markerElements = mainElement.getElementsByClassName('marker')
       const elemRect = mainElement.getBoundingClientRect()
       const height = window.innerHeight - elemRect.top
       if (height > 0) {
         const allElements = [...element]
         const allLineElements = [...lineElements]
+        const allMarkerElements = [...markerElements]
         allElements[0].classList.add('is-inview')
         buttonElement.classList.add('fade-in')
         allElements.forEach((el) => {
@@ -139,6 +141,12 @@ export default {
           const currentElement = el.getBoundingClientRect()
           if (currentElement.top > 1 && (window.innerHeight - currentElement.top > 0)) {
             el.style.width = '100%'
+          }
+        })
+        allMarkerElements.forEach((el) => {
+          const currentElement = el.getBoundingClientRect()
+          if (currentElement.top > 1 && (window.innerHeight - currentElement.top > 0)) {
+            el.classList.add('active')
           }
         })
       }
