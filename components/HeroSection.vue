@@ -103,9 +103,9 @@ export default {
 }
 
 .section-container .header-text {
-    font-size: 4rem;
+    font-size: 3.5rem;
     line-height: 1.3;
-    max-width: 59.5rem;
+    max-width: 54.5rem;
     width: 100%;
     margin-bottom: 4rem;
 }

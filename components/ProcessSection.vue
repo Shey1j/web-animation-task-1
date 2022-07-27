@@ -41,6 +41,7 @@
         :title="item.title"
         :image="item.image"
         :activities="item.content"
+        :is-top="isTop"
         @set-active="handleSetActiveItem"
       />
       <button v-if="!expandAll" class="expand-all" @click="expandAllItems">
@@ -81,7 +82,8 @@ export default {
       ],
       allActiveIds: [],
       expandAll: false,
-      activeId: 0
+      activeId: 0,
+      isTop: -1
     }
   },
   methods: {
@@ -98,9 +100,10 @@ export default {
           return item
         })
       } else {
-        // const elemnt = document.getElementsByClassName('process-accordion__wrapper')[0]
         this.activeId = -1
         this.allActiveIds = []
+        this.isTop = 0
+        window.scrollTo(0, -100)
       }
     }
   }

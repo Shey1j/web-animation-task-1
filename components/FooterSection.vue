@@ -46,10 +46,10 @@
           <div class="newsletter-form">
             <input type="email" class="form-input" placeholder="Your email address…">
             <div class="button-wrapper">
-              <button class="newsletter-btn footer-btn">
+              <button class="newsletter-btn">
                 <span>
                   <span class="button-label">
-                    <span class="inner">
+                    <span class="inner footer-btn">
                       <span class="initial">
                         Subscribe
                       </span>

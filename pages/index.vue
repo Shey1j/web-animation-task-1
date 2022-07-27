@@ -98,7 +98,11 @@ export default {
       const buttonElement = document.getElementById('hero-section').getElementsByClassName('hero-cta')[0]
       const allElements = [...element]
       allElements.forEach((el) => {
-        el.classList.add('is-inview')
+        const elemRect = el.getBoundingClientRect()
+        const height = window.innerHeight - elemRect.top
+        if (height > 0) {
+          el.classList.add('is-inview')
+        }
       })
       buttonElement.classList.add('fade-in')
     },

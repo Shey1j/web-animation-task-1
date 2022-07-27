@@ -1,5 +1,5 @@
 <template>
-  <div class="process-accordion" :class="{active: activeId === index || allIds.includes(index)}" @click="handleSetActive(index)">
+  <div class="process-accordion" :class="[{active: activeId === index || allIds.includes(index)}, {top: isTop === index}]" @click="handleSetActive(index)">
     <div class="process-accordion__wrapper">
       <div class="process-title">
         <h3 class="process-title__title" data-splitting="lines" data-animation="text">
@@ -58,6 +58,10 @@ export default {
     allIds: {
       type: Array,
       default: () => []
+    },
+    isTop: {
+      type: Number,
+      default: -1
     }
   },
   methods: {

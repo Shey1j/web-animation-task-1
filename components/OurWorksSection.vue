@@ -60,7 +60,7 @@
             Creating a microsite and an app for a credit card that empowers Gen Z and late millennials to be financially independent.
           </p>
           <a href="/" class="work-image__large">
-            <img src="~assets/images/ez-home.jpeg" alt="">
+            <img src="https://admin.pineapple.design//uploads/EZ_home_1_b4fda779e4.jpg" alt="">
           </a>
         </div>
       </div>
@@ -73,7 +73,7 @@
             A SaaS interface built to empower farmers in Africa to make better, data-driven decisions.
           </p>
           <a href="" class="work-image__large">
-            <img src="~assets/images/case-study.jpeg" alt="">
+            <img src="https://admin.pineapple.design//uploads/Green_Ivy_home_1_d261df3358.jpg" alt="">
           </a>
         </div>
       </div>
@@ -86,7 +86,7 @@
             A reimagined web experience for Antarctica Global that highlighted their custom software solutions, core values, and unique planet-friendly philosophies.
           </p>
           <a href="" class="work-image__large">
-            <img src="~assets/images/global.jpeg" alt="">
+            <img src="https://admin.pineapple.design//uploads/AG_home_2_74bf3b4758.jpg" alt="">
           </a>
         </div>
       </div>
@@ -226,7 +226,7 @@ span {
 }
 
 .work__inner {
-    height: 56rem;
+    height: 58rem;
     padding-top: 7.9rem;
     padding-left: 11rem;
     border-radius: 0 42rem 42rem 0;
