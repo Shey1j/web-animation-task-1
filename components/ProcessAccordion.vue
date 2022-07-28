@@ -74,8 +74,8 @@ export default {
 
 <style scoped>
 .process-accordion .process-accordion__wrapper {
-    padding-top: 4rem;
-    padding-bottom: 3.9rem;
+    padding-top: 3rem;
+    padding-bottom: 2.9rem;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -87,12 +87,13 @@ export default {
     width: 100%;
     line-height: 1;
     max-width: 42rem;
-    margin-right: 2.6rem;
+    margin-right: 0.6rem;
 }
 
 .process-accordion .process-accordion__wrapper .process-title__title {
   font-family: 'Telegraf';
   font-size: 2rem;
+  white-space: nowrap;
 }
 
 .process-accordion:hover .process-accordion__wrapper .process-title__title {
@@ -100,9 +101,9 @@ export default {
 }
 
 .process-accordion .process-accordion__wrapper .process-title__image {
-  width: 12.6rem;
-  height: 12.6rem;
-  margin-top: 2.4rem;
+  width: 9.6rem;
+  height: 9.6rem;
+  margin-top: 2rem;
   border-radius: 50%;
   display: none;
   opacity: 0;
@@ -135,8 +136,7 @@ export default {
     flex-wrap: wrap;
     flex-grow: 1;
     width: 50%;
-    padding-left: 3rem;
-    min-width: 42rem;
+    min-width: 41rem;
 }
 
 .process-accordion.active .process-accordion__wrapper .process-activities {

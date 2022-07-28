@@ -228,9 +228,9 @@ span {
 .work__inner {
     height: 58rem;
     padding-top: 7.9rem;
-    padding-left: 11rem;
+    padding-left: 8rem;
     border-radius: 0 42rem 42rem 0;
-    width: 84rem;
+    width: 77rem;
 }
 
 .work__heading {
@@ -254,7 +254,7 @@ span {
     border-radius: 10px;
     margin-left: 35px;
     background-color: #fff;
-    width: 52.4rem;
+    width: 47.4rem;
     height: 26.7rem;
     opacity: 1;
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0px 100%);

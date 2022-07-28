@@ -115,19 +115,19 @@ export default {
   margin-bottom: 140px;
 }
 .process-section__wrapper .section-container {
-    padding: 0 12rem;
+    padding: 0 10rem;
 }
 .process-title {
-    margin: 13.4rem 0 9.6rem;
+    margin: 10.4rem 0 6.6rem;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
 }
 .process-header__text {
-    max-width: 45rem;
+    max-width: 39rem;
     margin-right: 4rem;
     width: 100%;
-    font-size: 3rem;
+    font-size: 2.5rem;
     line-height: 1.375;
 }
 .process-btn__wrapper {
