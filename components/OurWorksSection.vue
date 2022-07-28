@@ -319,4 +319,15 @@ span {
 .cta-link__icon {
     color: #dc7550;
 }
+
+@media screen and (min-width: 1450px) {
+  .work__inner {
+    width: 84rem;
+    padding-left: 11rem;
+  }
+
+  .work-image__large {
+    width: 52.4rem;
+  }
+}
 </style>
