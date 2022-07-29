@@ -211,12 +211,12 @@ export default {
     margin-top: -3rem;
     position: relative;
     width: 100%;
-    max-width: 39rem;
+    max-width: 35rem;
     cursor: pointer;
 }
 
 .slider-wrapper {
-    max-width: 39rem;
+    max-width: 35rem;
     width: 100%;
     aspect-ratio: 1/1;
     display: grid;
@@ -296,5 +296,15 @@ button.play-btn {
     object-fit: cover;
     height: 100%;
     width: 100%;
+}
+
+@media screen and (min-width: 1450px) {
+  .hero-slider-section {
+    max-width: 39rem;
+  }
+
+  .slider-wrapper {
+    max-width: 39rem;
+  }
 }
 </style>
