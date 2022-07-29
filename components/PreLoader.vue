@@ -152,39 +152,42 @@ export default {
           loadedCount++
           const percentage = Math.floor((100 / totalImages) * loadedCount)
           this.percentageLoaded = percentage
-          const otherWrapperPath = document.getElementById('Path_33996')
-          const wrapperPath = document.getElementById('Path_33997')
           const minorPaths = document.getElementsByTagName('path')
-          const path = document.getElementById('Path_33979')
           const allWrapper = document.getElementsByTagName('svg')[0]
-          const preloadText = document.getElementsByClassName('c-preloader__text')[0]
-          const preloadLabel = document.getElementsByClassName('c-preloader__label')[0]
           const elllipseElements = document.querySelectorAll('ellipse')
           const rightGroup = document.getElementById('Group_21406')
           const leftGroup = document.getElementById('Group_21410')
-          const preloadWrapper = document.getElementById('preloader-wrapper')
-          // const preloadIcon = document.getElementsByClassName('c-preloader__icon')[0]
+          // const preloadWrapper = document.getElementById('preloader-wrapper')
+          const preloadHeader = document.getElementsByClassName('c-preloader__text')[0]
+          const preloadText = document.getElementsByClassName('c-preloader__label')[0]
+          const preloadIcon = document.getElementsByClassName('c-preloader__icon')[0]
           const body = document.getElementsByClassName('c-preloader')[0]
           const minorPathsArray = [...minorPaths]
-          preloadText.classList.add('fade-out')
-          preloadLabel.classList.add('fade-out')
-          elllipseElements[0].setAttribute('class', 'open-left')
-          elllipseElements[1].setAttribute('class', 'open-left')
+          elllipseElements[0].setAttribute('class', 'open-left-ish')
+          elllipseElements[1].setAttribute('class', 'slide-left')
           minorPathsArray.forEach((path) => {
-            if (parseInt(path.id.replace('Path_', '')) > 33997 && parseInt(path.id.replace('Path_', '')) < 34014) {
+            if (parseInt(path.id.replace('Path_', '')) === 33996) {
+              path.setAttribute('class', 'rotate-right')
+            }
+            if (parseInt(path.id.replace('Path_', '')) > 33996 && parseInt(path.id.replace('Path_', '')) < 34014) {
               path.setAttribute('class', 'fade-out')
+            }
+            if (parseInt(path.id.replace('Path_', '')) === 34015) {
+              path.setAttribute('class', 'open-wide')
             }
           })
           rightGroup.setAttribute('class', 'open-right')
           leftGroup.setAttribute('class', 'open-left')
-          wrapperPath.setAttribute('class', 'fade-out')
-          otherWrapperPath.setAttribute('class', 'rotate-right')
-          path.setAttribute('class', 'expand')
-          // preloadIcon.classList.add('open')
-          preloadWrapper.classList.add('open')
-          allWrapper.setAttribute('class', 'open')
-          allWrapper.setAttribute('preserveAspectRatio', 'xMidYMid slice')
-          body.classList.add('back-color')
+          preloadIcon.classList.add('change-position')
+          // preloadWrapper.classList.add('open')
+          setTimeout(() => {
+            preloadHeader.classList.add('fade-out')
+            preloadText.classList.add('fade-out')
+            allWrapper.setAttribute('class', 'open-wide')
+          }, 1500)
+          setTimeout(() => {
+            body.classList.add('back-color')
+          }, 1500)
           setTimeout(() => {
             this.$store.commit('updateImagesLoaded', true)
           }, 4000)
@@ -277,13 +280,17 @@ html {
   }
 }
 
+.change-position {
+  z-index: 99;
+}
+
 .open-right {
     animation: open-right 1s ease-in-out forwards;
 }
 
 @keyframes open-right {
     100% {
-        transform: translate(100%, 0);
+        transform: translate(100%, 0.453%);
         opacity: 0;
     }
 }
@@ -292,23 +299,34 @@ html {
     animation: open-left 1s ease-in-out forwards;
 }
 
-/* .open-left-ish {
-    animation: open-left-ish 1s ease-in-out forwards;
-} */
+.slide-left {
+  animation: slide-left 0.5s ease-in forwards;
+}
+
+.open-left-ish {
+    animation: open-left-ish 0.75s ease-in-out forwards;
+}
 
 @keyframes open-left {
     100% {
-        transform: translate(-100%, 0);
+        transform: translate(-100%, 0.453%);
         opacity: 0;
     }
 }
 
-/* @keyframes open-left-ish {
+@keyframes slide-left {
     100% {
-        transform: translate(100%, -40%);
+      transform: matrix(0.78, -0.625, 0.625, 0.78, -32.732, 53.636);
+      opacity: 0;
+    }
+}
+
+@keyframes open-left-ish {
+    100% {
+        transform: matrix(0.78, -0.625, 0.625, 0.78, -50.544, 51.783);
         opacity: 0;
     }
-} */
+}
 
 .expand {
     animation: expand 1.2s ease-in-out forwards;
@@ -324,5 +342,20 @@ html {
 .back-color {
     background-color: #000;
     transition: background-color 1.725s ease-in-out;
+}
+
+@keyframes zoom-in {
+  0% {
+    transform: scale(1, 1);
+  }
+  100% {
+    transform: scale(3, 3);
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+.open-wide {
+  animation: zoom-in 1s ease-in forwards;
 }
 </style>
