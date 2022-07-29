@@ -97,7 +97,7 @@ export default {
 }
 
 .section-container {
-    padding: 21.5rem 12rem 0;
+    padding: 16.5rem 12rem 0;
     margin: 0 auto;
     color: #fff;
 }

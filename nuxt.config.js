@@ -2,7 +2,7 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   ssr: false,
   head: {
-    title: 'anim-seyi-project',
+    title: 'Pineapple Recreate',
     htmlAttrs: {
       lang: 'en'
     },
@@ -13,7 +13,7 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.svg' }
     ],
     script: [
       { src: 'https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js' }
