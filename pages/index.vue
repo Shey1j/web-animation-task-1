@@ -174,7 +174,7 @@ export default {
         allImageElements.forEach((el) => {
           const currentElement = el.getBoundingClientRect()
           if (currentElement.top > 1 && (window.innerHeight - currentElement.top > 0)) {
-            el.classList.add('fade-in')
+            el.getElementsByTagName('img')[0].classList.add('zoom-in')
           }
         })
       }
